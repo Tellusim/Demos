@@ -1,0 +1,4015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scene>
+	<version>20230725</version>
+	<scene>
+		<time>22.605767</time>
+		<num_materials>113</num_materials>
+		<material id="1" type="6" type_name="Shading">
+			<shading_name>shaders/earth_surface.shading</shading_name>
+			<name>Earth_Surface</name>
+			<num_uniforms>17</num_uniforms>
+			<uniform>
+				<name>earth_inner_radius</name>
+				<size>1</size>
+				<data>0.6371e7</data>
+			</uniform>
+			<uniform>
+				<name>earth_sphere_radius</name>
+				<size>1</size>
+				<data>0.6471e7</data>
+			</uniform>
+			<uniform>
+				<name>earth_night_power</name>
+				<size>1</size>
+				<data>2.92</data>
+			</uniform>
+			<uniform>
+				<name>earth_surface_luminance</name>
+				<size>1</size>
+				<data>2.17</data>
+			</uniform>
+			<uniform>
+				<name>earth_surface_roughness</name>
+				<size>1</size>
+				<data>0.27</data>
+			</uniform>
+			<uniform>
+				<name>earth_water_roughness</name>
+				<size>1</size>
+				<data>0.47</data>
+			</uniform>
+			<uniform>
+				<name>earth_water_color</name>
+				<size>4</size>
+				<data>0.0 0.0 0.098039 1.0</data>
+			</uniform>
+			<uniform>
+				<name>earth_outer_height</name>
+				<size>1</size>
+				<data>0.65e4</data>
+			</uniform>
+			<uniform>
+				<name>earth_ray_height</name>
+				<size>1</size>
+				<data>0.7994e4</data>
+			</uniform>
+			<uniform>
+				<name>earth_height_shadow</name>
+				<size>1</size>
+				<data>3.98</data>
+			</uniform>
+			<uniform>
+				<name>earth_cloud_shadow</name>
+				<size>1</size>
+				<data>12.04</data>
+			</uniform>
+			<uniform>
+				<name>earth_cloud_scale</name>
+				<size>1</size>
+				<data>0.95</data>
+			</uniform>
+			<uniform>
+				<name>earth_cloud_angle</name>
+				<size>1</size>
+				<data>1.0</data>
+			</uniform>
+			<uniform>
+				<name>earth_mie_turbidity</name>
+				<size>1</size>
+				<data>1.2</data>
+			</uniform>
+			<uniform>
+				<name>earth_ray_wavelength</name>
+				<size>3</size>
+				<data>0.68e-6 0.55e-6 0.42e-6</data>
+			</uniform>
+			<uniform>
+				<name>earth_mie_spectrum</name>
+				<size>3</size>
+				<data>0.686282 0.677739 0.660644</data>
+			</uniform>
+			<uniform>
+				<name>earth_color_scale</name>
+				<size>1</size>
+				<data>0.7</data>
+			</uniform>
+			<order>12</order>
+			<pass_mask>2</pass_mask>
+		</material>
+		<material id="2" type="6" type_name="Shading">
+			<shading_name>shaders/earth_depth.shading</shading_name>
+			<name>Earth_Depth</name>
+			<num_uniforms>2</num_uniforms>
+			<uniform>
+				<name>earth_inner_radius</name>
+				<size>1</size>
+				<data>0.6371e7</data>
+			</uniform>
+			<uniform>
+				<name>earth_sphere_radius</name>
+				<size>1</size>
+				<data>0.6471e7</data>
+			</uniform>
+			<order>13</order>
+			<pass_mask>11</pass_mask>
+			<deferred_mask>64</deferred_mask>
+		</material>
+		<material id="3" type="6" type_name="Shading">
+			<shading_name>shaders/galaxy.shading</shading_name>
+			<name>Galaxy</name>
+			<num_uniforms>1</num_uniforms>
+			<uniform>
+				<name>galaxy_scale</name>
+				<size>1</size>
+				<data>0.5</data>
+			</uniform>
+			<order>10</order>
+			<pass_mask>3</pass_mask>
+			<deferred_mask>64</deferred_mask>
+		</material>
+		<material id="4" type="6" type_name="Shading">
+			<shading_name>shaders/stars.shading</shading_name>
+			<name>Stars</name>
+			<num_uniforms>1</num_uniforms>
+			<uniform>
+				<name>stars_scale</name>
+				<size>1</size>
+				<data>0.25</data>
+			</uniform>
+			<order>11</order>
+			<pass_mask>2</pass_mask>
+		</material>
+		<material id="5" type="4" type_name="Metallic">
+			<name>Asteroids</name>
+			<num_uniforms>8</num_uniforms>
+			<uniform>
+				<name>diffuse_color</name>
+				<size>4</size>
+				<data>0.87097 0.87097 0.87097 1.0</data>
+			</uniform>
+			<uniform>
+				<name>emission_color</name>
+				<size>4</size>
+				<data>1.0 1.0 1.0 1.0</data>
+			</uniform>
+			<uniform>
+				<name>occlusion_scale</name>
+				<size>1</size>
+				<data>2.0</data>
+			</uniform>
+			<uniform>
+				<name>occlusion_offset</name>
+				<size>1</size>
+				<data>-1.0</data>
+			</uniform>
+			<uniform>
+				<name>roughness_scale</name>
+				<size>1</size>
+				<data>0.7</data>
+			</uniform>
+			<uniform>
+				<name>roughness_offset</name>
+				<size>1</size>
+				<data>0.15</data>
+			</uniform>
+			<uniform>
+				<name>metallic_offset</name>
+				<size>1</size>
+				<data>-0.1</data>
+			</uniform>
+			<uniform>
+				<name>texcoord_matrix</name>
+				<size>4</size>
+				<data>1.0 -1.0 0.0 1.0</data>
+			</uniform>
+		</material>
+		<material id="6" type="1" type_name="Base">
+			<name>Asteroid_00</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="7" type="1" type_name="Base">
+			<name>asteroid_00.l0</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="8" type="1" type_name="Base">
+			<name>asteroid_00.l1</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="9" type="1" type_name="Base">
+			<name>asteroid_00.l2</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="10" type="1" type_name="Base">
+			<name>asteroid_00.l3</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="11" type="1" type_name="Base">
+			<name>asteroid_00.l4</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="12" type="1" type_name="Base">
+			<name>asteroid_00.l5</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="13" type="1" type_name="Base">
+			<name>asteroid_00.l6</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="14" type="1" type_name="Base">
+			<name>asteroid_00.l7</name>
+			<parent id="6" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_00/asteroid_00.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_00/asteroid_00.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_00/asteroid_00.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="15" type="1" type_name="Base">
+			<name>Asteroid_01</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="16" type="1" type_name="Base">
+			<name>asteroid_01.l0</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="17" type="1" type_name="Base">
+			<name>asteroid_01.l1</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="18" type="1" type_name="Base">
+			<name>asteroid_01.l2</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="19" type="1" type_name="Base">
+			<name>asteroid_01.l3</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="20" type="1" type_name="Base">
+			<name>asteroid_01.l4</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="21" type="1" type_name="Base">
+			<name>asteroid_01.l5</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="22" type="1" type_name="Base">
+			<name>asteroid_01.l6</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="23" type="1" type_name="Base">
+			<name>asteroid_01.l7</name>
+			<parent id="15" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_01/asteroid_01.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_01/asteroid_01.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_01/asteroid_01.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="24" type="1" type_name="Base">
+			<name>Asteroid_02</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+			<num_uniforms>1</num_uniforms>
+			<uniform>
+				<name>diffuse_color</name>
+				<size>4</size>
+				<data>0.629038 0.629038 0.629038 1.0</data>
+			</uniform>
+		</material>
+		<material id="25" type="1" type_name="Base">
+			<name>asteroid_02.l0</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="26" type="1" type_name="Base">
+			<name>asteroid_02.l1</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="27" type="1" type_name="Base">
+			<name>asteroid_02.l2</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="28" type="1" type_name="Base">
+			<name>asteroid_02.l3</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="29" type="1" type_name="Base">
+			<name>asteroid_02.l4</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="30" type="1" type_name="Base">
+			<name>asteroid_02.l5</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="31" type="1" type_name="Base">
+			<name>asteroid_02.l6</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="32" type="1" type_name="Base">
+			<name>asteroid_02.l7</name>
+			<parent id="24" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_02/asteroid_02.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_02/asteroid_02.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_02/asteroid_02.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="33" type="1" type_name="Base">
+			<name>Asteroid_03</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="34" type="1" type_name="Base">
+			<name>asteroid_03.l0</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="35" type="1" type_name="Base">
+			<name>asteroid_03.l1</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="36" type="1" type_name="Base">
+			<name>asteroid_03.l2</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="37" type="1" type_name="Base">
+			<name>asteroid_03.l3</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="38" type="1" type_name="Base">
+			<name>asteroid_03.l4</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="39" type="1" type_name="Base">
+			<name>asteroid_03.l5</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="40" type="1" type_name="Base">
+			<name>asteroid_03.l6</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="41" type="1" type_name="Base">
+			<name>asteroid_03.l7</name>
+			<parent id="33" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_03/asteroid_03.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_03/asteroid_03.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_03/asteroid_03.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="42" type="1" type_name="Base">
+			<name>Asteroid_04</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="43" type="1" type_name="Base">
+			<name>asteroid_04.l0</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="44" type="1" type_name="Base">
+			<name>asteroid_04.l1</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="45" type="1" type_name="Base">
+			<name>asteroid_04.l2</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="46" type="1" type_name="Base">
+			<name>asteroid_04.l3</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="47" type="1" type_name="Base">
+			<name>asteroid_04.l4</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="48" type="1" type_name="Base">
+			<name>asteroid_04.l5</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="49" type="1" type_name="Base">
+			<name>asteroid_04.l6</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="50" type="1" type_name="Base">
+			<name>asteroid_04.l7</name>
+			<parent id="42" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_04/asteroid_04.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_04/asteroid_04.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_04/asteroid_04.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="51" type="1" type_name="Base">
+			<name>Asteroid_05</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+			<num_uniforms>1</num_uniforms>
+			<uniform>
+				<name>diffuse_color</name>
+				<size>4</size>
+				<data>0.717739 0.717739 0.717739 1.0</data>
+			</uniform>
+		</material>
+		<material id="52" type="1" type_name="Base">
+			<name>asteroid_05.l0</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="53" type="1" type_name="Base">
+			<name>asteroid_05.l1</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="54" type="1" type_name="Base">
+			<name>asteroid_05.l2</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="55" type="1" type_name="Base">
+			<name>asteroid_05.l3</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="56" type="1" type_name="Base">
+			<name>asteroid_05.l4</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="57" type="1" type_name="Base">
+			<name>asteroid_05.l5</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="58" type="1" type_name="Base">
+			<name>asteroid_05.l6</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="59" type="1" type_name="Base">
+			<name>asteroid_05.l7</name>
+			<parent id="51" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_05/asteroid_05.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_05/asteroid_05.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_05/asteroid_05.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="60" type="1" type_name="Base">
+			<name>Asteroid_06</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="61" type="1" type_name="Base">
+			<name>asteroid_06.l0</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="62" type="1" type_name="Base">
+			<name>asteroid_06.l1</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="63" type="1" type_name="Base">
+			<name>asteroid_06.l2</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="64" type="1" type_name="Base">
+			<name>asteroid_06.l3</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="65" type="1" type_name="Base">
+			<name>asteroid_06.l4</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="66" type="1" type_name="Base">
+			<name>asteroid_06.l5</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="67" type="1" type_name="Base">
+			<name>asteroid_06.l6</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="68" type="1" type_name="Base">
+			<name>asteroid_06.l7</name>
+			<parent id="60" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_06/asteroid_06.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_06/asteroid_06.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_06/asteroid_06.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="69" type="1" type_name="Base">
+			<name>Asteroid_07</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="70" type="1" type_name="Base">
+			<name>asteroid_07.l0</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="71" type="1" type_name="Base">
+			<name>asteroid_07.l1</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="72" type="1" type_name="Base">
+			<name>asteroid_07.l2</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="73" type="1" type_name="Base">
+			<name>asteroid_07.l3</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="74" type="1" type_name="Base">
+			<name>asteroid_07.l4</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="75" type="1" type_name="Base">
+			<name>asteroid_07.l5</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="76" type="1" type_name="Base">
+			<name>asteroid_07.l6</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="77" type="1" type_name="Base">
+			<name>asteroid_07.l7</name>
+			<parent id="69" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_07/asteroid_07.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_07/asteroid_07.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_07/asteroid_07.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="78" type="1" type_name="Base">
+			<name>Asteroid_08</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+			<num_uniforms>1</num_uniforms>
+			<uniform>
+				<name>diffuse_color</name>
+				<size>4</size>
+				<data>0.588708 0.588708 0.588708 1.0</data>
+			</uniform>
+		</material>
+		<material id="79" type="1" type_name="Base">
+			<name>asteroid_08.l0</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="80" type="1" type_name="Base">
+			<name>asteroid_08.l1</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="81" type="1" type_name="Base">
+			<name>asteroid_08.l2</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="82" type="1" type_name="Base">
+			<name>asteroid_08.l3</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="83" type="1" type_name="Base">
+			<name>asteroid_08.l4</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="84" type="1" type_name="Base">
+			<name>asteroid_08.l5</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="85" type="1" type_name="Base">
+			<name>asteroid_08.l6</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="86" type="1" type_name="Base">
+			<name>asteroid_08.l7</name>
+			<parent id="78" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_08/asteroid_08.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_08/asteroid_08.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_08/asteroid_08.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="87" type="1" type_name="Base">
+			<name>Asteroid_09</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="88" type="1" type_name="Base">
+			<name>asteroid_09.l0</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="89" type="1" type_name="Base">
+			<name>asteroid_09.l1</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="90" type="1" type_name="Base">
+			<name>asteroid_09.l2</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="91" type="1" type_name="Base">
+			<name>asteroid_09.l3</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="92" type="1" type_name="Base">
+			<name>asteroid_09.l4</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="93" type="1" type_name="Base">
+			<name>asteroid_09.l5</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="94" type="1" type_name="Base">
+			<name>asteroid_09.l6</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="95" type="1" type_name="Base">
+			<name>asteroid_09.l7</name>
+			<parent id="87" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_09/asteroid_09.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_09/asteroid_09.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_09/asteroid_09.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="96" type="1" type_name="Base">
+			<name>Asteroid_10</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+			<num_uniforms>1</num_uniforms>
+			<uniform>
+				<name>diffuse_color</name>
+				<size>4</size>
+				<data>0.725811 0.725811 0.725811 1.0</data>
+			</uniform>
+		</material>
+		<material id="97" type="1" type_name="Base">
+			<name>asteroid_10.l0</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="98" type="1" type_name="Base">
+			<name>asteroid_10.l1</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="99" type="1" type_name="Base">
+			<name>asteroid_10.l2</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="100" type="1" type_name="Base">
+			<name>asteroid_10.l3</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="101" type="1" type_name="Base">
+			<name>asteroid_10.l4</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="102" type="1" type_name="Base">
+			<name>asteroid_10.l5</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="103" type="1" type_name="Base">
+			<name>asteroid_10.l6</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="104" type="1" type_name="Base">
+			<name>asteroid_10.l7</name>
+			<parent id="96" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_10/asteroid_10.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_10/asteroid_10.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_10/asteroid_10.l7.m.image</file>
+			</texture>
+		</material>
+		<material id="105" type="1" type_name="Base">
+			<name>Asteroid_11</name>
+			<parent id="5" type="4" type_name="Metallic"/>
+		</material>
+		<material id="106" type="1" type_name="Base">
+			<name>asteroid_11.l0</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l0.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l0.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l0.m.image</file>
+			</texture>
+		</material>
+		<material id="107" type="1" type_name="Base">
+			<name>asteroid_11.l1</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l1.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l1.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l1.m.image</file>
+			</texture>
+		</material>
+		<material id="108" type="1" type_name="Base">
+			<name>asteroid_11.l2</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l2.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l2.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l2.m.image</file>
+			</texture>
+		</material>
+		<material id="109" type="1" type_name="Base">
+			<name>asteroid_11.l3</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l3.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l3.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l3.m.image</file>
+			</texture>
+		</material>
+		<material id="110" type="1" type_name="Base">
+			<name>asteroid_11.l4</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l4.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l4.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l4.m.image</file>
+			</texture>
+		</material>
+		<material id="111" type="1" type_name="Base">
+			<name>asteroid_11.l5</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l5.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l5.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l5.m.image</file>
+			</texture>
+		</material>
+		<material id="112" type="1" type_name="Base">
+			<name>asteroid_11.l6</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l6.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l6.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l6.m.image</file>
+			</texture>
+		</material>
+		<material id="113" type="1" type_name="Base">
+			<name>asteroid_11.l7</name>
+			<parent id="105" type="1" type_name="Base"/>
+			<num_textures>3</num_textures>
+			<texture>
+				<name>normal</name>
+				<file>textures/asteroid_11/asteroid_11.l7.n.image</file>
+			</texture>
+			<texture>
+				<name>diffuse</name>
+				<file>textures/asteroid_11/asteroid_11.l7.d.image</file>
+			</texture>
+			<texture>
+				<name>metallic</name>
+				<file>textures/asteroid_11/asteroid_11.l7.m.image</file>
+			</texture>
+		</material>
+		<num_objects>16</num_objects>
+		<object id="114" type="1" type_name="Mesh">
+			<name>Earth_Surface</name>
+			<masks>ffffffff ffffffff 1 0 ffffffff 0 ffffffff ffffffff</masks>
+			<bound_box>-1.0 -1.0 -1.0 1.0 1.0 1.0</bound_box>
+			<num_geometries>1 1</num_geometries>
+			<geometry id="115" type="2" type_name="Mesh" expanded="1">
+				<name>Earth</name>
+				<bound_box>-1.0 -1.0 -1.0 1.0 1.0 1.0</bound_box>
+				<num_materials>1</num_materials>
+				<material id="1" type="6" type_name="Shading"/>
+				<num_indices>61440</num_indices>
+				<num_vertices>10242</num_vertices>
+			</geometry>
+			<mesh_name>meshes/earth.mesh</mesh_name>
+			<mesh_flags>ver,tri</mesh_flags>
+			<vertex_stride>12</vertex_stride>
+		</object>
+		<object id="116" type="1" type_name="Mesh">
+			<name>Galaxy</name>
+			<masks>ffffffff ffffffff 1 0 ffffffff 0 ffffffff ffffffff</masks>
+			<bound_box>-1.0e5 -1.0e5 -1.0e5 1.0e5 1.0e5 1.0e5</bound_box>
+			<num_geometries>1 1</num_geometries>
+			<geometry id="117" type="2" type_name="Mesh">
+				<name>Galaxy</name>
+				<bound_box>-1.0e5 -1.0e5 -1.0e5 1.0e5 1.0e5 1.0e5</bound_box>
+				<num_materials>1</num_materials>
+				<material id="3" type="6" type_name="Shading"/>
+				<num_indices>960</num_indices>
+				<num_vertices>162</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>960</num_indices>
+					<num_vertices>162</num_vertices>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/galaxy.mesh</mesh_name>
+			<mesh_flags>ver,tri</mesh_flags>
+			<vertex_stride>12</vertex_stride>
+		</object>
+		<object id="118" type="1" type_name="Mesh">
+			<name>Stars</name>
+			<masks>ffffffff ffffffff 1 0 ffffffff 0 ffffffff ffffffff</masks>
+			<bound_box>-0.319683e4 -0.322572e4 -0.318396e4 0.322686e4 0.321329e4 3142.585693</bound_box>
+			<num_geometries>1 1</num_geometries>
+			<geometry id="119" type="2" type_name="Mesh">
+				<name>Stars</name>
+				<bound_box>-0.319683e4 -0.322572e4 -0.318396e4 0.322686e4 0.321329e4 3142.585693</bound_box>
+				<num_materials>1</num_materials>
+				<material id="4" type="6" type_name="Shading"/>
+				<num_indices>107844</num_indices>
+				<num_vertices>107844</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>107844</num_indices>
+					<num_vertices>107844</num_vertices>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/stars.mesh</mesh_name>
+			<mesh_flags>ver,poi,col</mesh_flags>
+			<vertex_stride>16</vertex_stride>
+		</object>
+		<object id="120" type="1" type_name="Mesh">
+			<name>Asteroid_00</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="121" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="7" type="1" type_name="Base"/>
+				<num_indices>78228</num_indices>
+				<num_vertices>13154</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>78228</num_indices>
+					<num_vertices>13154</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="122" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="8" type="1" type_name="Base"/>
+				<num_indices>19962</num_indices>
+				<num_vertices>3387</num_vertices>
+				<base_index>78228</base_index>
+				<base_vertex>13154</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>19962</num_indices>
+					<num_vertices>3387</num_vertices>
+					<base_index>78228</base_index>
+					<base_vertex>13154</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="123" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="9" type="1" type_name="Base"/>
+				<num_indices>5088</num_indices>
+				<num_vertices>879</num_vertices>
+				<base_index>98190</base_index>
+				<base_vertex>16541</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>5088</num_indices>
+					<num_vertices>879</num_vertices>
+					<base_index>98190</base_index>
+					<base_vertex>16541</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="124" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="10" type="1" type_name="Base"/>
+				<num_indices>1356</num_indices>
+				<num_vertices>242</num_vertices>
+				<base_index>103278</base_index>
+				<base_vertex>17420</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1356</num_indices>
+					<num_vertices>242</num_vertices>
+					<base_index>103278</base_index>
+					<base_vertex>17420</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="125" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="11" type="1" type_name="Base"/>
+				<num_indices>300</num_indices>
+				<num_vertices>59</num_vertices>
+				<base_index>104634</base_index>
+				<base_vertex>17662</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>300</num_indices>
+					<num_vertices>59</num_vertices>
+					<base_index>104634</base_index>
+					<base_vertex>17662</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="126" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="12" type="1" type_name="Base"/>
+				<num_indices>84</num_indices>
+				<num_vertices>21</num_vertices>
+				<base_index>104934</base_index>
+				<base_vertex>17721</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>84</num_indices>
+					<num_vertices>21</num_vertices>
+					<base_index>104934</base_index>
+					<base_vertex>17721</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="127" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="13" type="1" type_name="Base"/>
+				<num_indices>36</num_indices>
+				<num_vertices>13</num_vertices>
+				<base_index>105018</base_index>
+				<base_vertex>17742</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>36</num_indices>
+					<num_vertices>13</num_vertices>
+					<base_index>105018</base_index>
+					<base_vertex>17742</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="128" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-5.928342 -5.716348 -5.589575 5.949914 5.721031 5.58428</bound_box>
+				<num_materials>1</num_materials>
+				<material id="14" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>8</num_vertices>
+				<base_index>105054</base_index>
+				<base_vertex>17755</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>8</num_vertices>
+					<base_index>105054</base_index>
+					<base_vertex>17755</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_00.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="129" type="1" type_name="Mesh">
+			<name>Asteroid_01</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="130" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="16" type="1" type_name="Base"/>
+				<num_indices>66162</num_indices>
+				<num_vertices>11122</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>66162</num_indices>
+					<num_vertices>11122</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="131" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="17" type="1" type_name="Base"/>
+				<num_indices>16728</num_indices>
+				<num_vertices>2833</num_vertices>
+				<base_index>66162</base_index>
+				<base_vertex>11122</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>16728</num_indices>
+					<num_vertices>2833</num_vertices>
+					<base_index>66162</base_index>
+					<base_vertex>11122</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="132" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="18" type="1" type_name="Base"/>
+				<num_indices>4236</num_indices>
+				<num_vertices>731</num_vertices>
+				<base_index>82890</base_index>
+				<base_vertex>13955</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>4236</num_indices>
+					<num_vertices>731</num_vertices>
+					<base_index>82890</base_index>
+					<base_vertex>13955</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="133" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="19" type="1" type_name="Base"/>
+				<num_indices>1164</num_indices>
+				<num_vertices>206</num_vertices>
+				<base_index>87126</base_index>
+				<base_vertex>14686</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1164</num_indices>
+					<num_vertices>206</num_vertices>
+					<base_index>87126</base_index>
+					<base_vertex>14686</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="134" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="20" type="1" type_name="Base"/>
+				<num_indices>306</num_indices>
+				<num_vertices>61</num_vertices>
+				<base_index>88290</base_index>
+				<base_vertex>14892</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>306</num_indices>
+					<num_vertices>61</num_vertices>
+					<base_index>88290</base_index>
+					<base_vertex>14892</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="135" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="21" type="1" type_name="Base"/>
+				<num_indices>78</num_indices>
+				<num_vertices>18</num_vertices>
+				<base_index>88596</base_index>
+				<base_vertex>14953</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>78</num_indices>
+					<num_vertices>18</num_vertices>
+					<base_index>88596</base_index>
+					<base_vertex>14953</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="136" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="22" type="1" type_name="Base"/>
+				<num_indices>36</num_indices>
+				<num_vertices>11</num_vertices>
+				<base_index>88674</base_index>
+				<base_vertex>14971</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>36</num_indices>
+					<num_vertices>11</num_vertices>
+					<base_index>88674</base_index>
+					<base_vertex>14971</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="137" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-4.797079 -5.824227 -4.756743 4.791889 5.822898 4.754046</bound_box>
+				<num_materials>1</num_materials>
+				<material id="23" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>11</num_vertices>
+				<base_index>88710</base_index>
+				<base_vertex>14982</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>11</num_vertices>
+					<base_index>88710</base_index>
+					<base_vertex>14982</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_01.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="138" type="1" type_name="Mesh">
+			<name>Asteroid_02</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="139" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="25" type="1" type_name="Base"/>
+				<num_indices>72210</num_indices>
+				<num_vertices>12158</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>72210</num_indices>
+					<num_vertices>12158</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="140" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="26" type="1" type_name="Base"/>
+				<num_indices>18288</num_indices>
+				<num_vertices>3109</num_vertices>
+				<base_index>72210</base_index>
+				<base_vertex>12158</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>18288</num_indices>
+					<num_vertices>3109</num_vertices>
+					<base_index>72210</base_index>
+					<base_vertex>12158</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="141" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="27" type="1" type_name="Base"/>
+				<num_indices>4632</num_indices>
+				<num_vertices>803</num_vertices>
+				<base_index>90498</base_index>
+				<base_vertex>15267</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>4632</num_indices>
+					<num_vertices>803</num_vertices>
+					<base_index>90498</base_index>
+					<base_vertex>15267</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="142" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="28" type="1" type_name="Base"/>
+				<num_indices>1272</num_indices>
+				<num_vertices>229</num_vertices>
+				<base_index>95130</base_index>
+				<base_vertex>16070</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1272</num_indices>
+					<num_vertices>229</num_vertices>
+					<base_index>95130</base_index>
+					<base_vertex>16070</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="143" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="29" type="1" type_name="Base"/>
+				<num_indices>336</num_indices>
+				<num_vertices>64</num_vertices>
+				<base_index>96402</base_index>
+				<base_vertex>16299</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>336</num_indices>
+					<num_vertices>64</num_vertices>
+					<base_index>96402</base_index>
+					<base_vertex>16299</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="144" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="30" type="1" type_name="Base"/>
+				<num_indices>90</num_indices>
+				<num_vertices>22</num_vertices>
+				<base_index>96738</base_index>
+				<base_vertex>16363</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>90</num_indices>
+					<num_vertices>22</num_vertices>
+					<base_index>96738</base_index>
+					<base_vertex>16363</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="145" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="31" type="1" type_name="Base"/>
+				<num_indices>36</num_indices>
+				<num_vertices>12</num_vertices>
+				<base_index>96828</base_index>
+				<base_vertex>16385</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>36</num_indices>
+					<num_vertices>12</num_vertices>
+					<base_index>96828</base_index>
+					<base_vertex>16385</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="146" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-5.416038 -5.107802 -5.868814 5.414167 5.101998 6.029861</bound_box>
+				<num_materials>1</num_materials>
+				<material id="32" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>10</num_vertices>
+				<base_index>96864</base_index>
+				<base_vertex>16397</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>10</num_vertices>
+					<base_index>96864</base_index>
+					<base_vertex>16397</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_02.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="147" type="1" type_name="Mesh">
+			<name>Asteroid_03</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-4.861865 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="148" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="34" type="1" type_name="Base"/>
+				<num_indices>76446</num_indices>
+				<num_vertices>12851</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>76446</num_indices>
+					<num_vertices>12851</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="149" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="35" type="1" type_name="Base"/>
+				<num_indices>19290</num_indices>
+				<num_vertices>3267</num_vertices>
+				<base_index>76446</base_index>
+				<base_vertex>12851</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>19290</num_indices>
+					<num_vertices>3267</num_vertices>
+					<base_index>76446</base_index>
+					<base_vertex>12851</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="150" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="36" type="1" type_name="Base"/>
+				<num_indices>4950</num_indices>
+				<num_vertices>853</num_vertices>
+				<base_index>95736</base_index>
+				<base_vertex>16118</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>4950</num_indices>
+					<num_vertices>853</num_vertices>
+					<base_index>95736</base_index>
+					<base_vertex>16118</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="151" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="37" type="1" type_name="Base"/>
+				<num_indices>1380</num_indices>
+				<num_vertices>246</num_vertices>
+				<base_index>100686</base_index>
+				<base_vertex>16971</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1380</num_indices>
+					<num_vertices>246</num_vertices>
+					<base_index>100686</base_index>
+					<base_vertex>16971</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="152" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="38" type="1" type_name="Base"/>
+				<num_indices>342</num_indices>
+				<num_vertices>65</num_vertices>
+				<base_index>102066</base_index>
+				<base_vertex>17217</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>342</num_indices>
+					<num_vertices>65</num_vertices>
+					<base_index>102066</base_index>
+					<base_vertex>17217</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="153" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="39" type="1" type_name="Base"/>
+				<num_indices>78</num_indices>
+				<num_vertices>20</num_vertices>
+				<base_index>102408</base_index>
+				<base_vertex>17282</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>78</num_indices>
+					<num_vertices>20</num_vertices>
+					<base_index>102408</base_index>
+					<base_vertex>17282</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="154" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="40" type="1" type_name="Base"/>
+				<num_indices>48</num_indices>
+				<num_vertices>14</num_vertices>
+				<base_index>102486</base_index>
+				<base_vertex>17302</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>48</num_indices>
+					<num_vertices>14</num_vertices>
+					<base_index>102486</base_index>
+					<base_vertex>17302</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="155" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-4.861866 -6.690721 -5.423078 4.952909 6.447163 5.433081</bound_box>
+				<num_materials>1</num_materials>
+				<material id="41" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>9</num_vertices>
+				<base_index>102534</base_index>
+				<base_vertex>17316</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>9</num_vertices>
+					<base_index>102534</base_index>
+					<base_vertex>17316</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_03.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="156" type="1" type_name="Mesh">
+			<name>Asteroid_04</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="157" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="43" type="1" type_name="Base"/>
+				<num_indices>65982</num_indices>
+				<num_vertices>11106</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>65982</num_indices>
+					<num_vertices>11106</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="158" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="44" type="1" type_name="Base"/>
+				<num_indices>16770</num_indices>
+				<num_vertices>2848</num_vertices>
+				<base_index>65982</base_index>
+				<base_vertex>11106</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>16770</num_indices>
+					<num_vertices>2848</num_vertices>
+					<base_index>65982</base_index>
+					<base_vertex>11106</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="159" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="45" type="1" type_name="Base"/>
+				<num_indices>4434</num_indices>
+				<num_vertices>772</num_vertices>
+				<base_index>82752</base_index>
+				<base_vertex>13954</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>4434</num_indices>
+					<num_vertices>772</num_vertices>
+					<base_index>82752</base_index>
+					<base_vertex>13954</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="160" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="46" type="1" type_name="Base"/>
+				<num_indices>1140</num_indices>
+				<num_vertices>205</num_vertices>
+				<base_index>87186</base_index>
+				<base_vertex>14726</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1140</num_indices>
+					<num_vertices>205</num_vertices>
+					<base_index>87186</base_index>
+					<base_vertex>14726</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="161" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="47" type="1" type_name="Base"/>
+				<num_indices>306</num_indices>
+				<num_vertices>59</num_vertices>
+				<base_index>88326</base_index>
+				<base_vertex>14931</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>306</num_indices>
+					<num_vertices>59</num_vertices>
+					<base_index>88326</base_index>
+					<base_vertex>14931</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="162" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="48" type="1" type_name="Base"/>
+				<num_indices>84</num_indices>
+				<num_vertices>20</num_vertices>
+				<base_index>88632</base_index>
+				<base_vertex>14990</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>84</num_indices>
+					<num_vertices>20</num_vertices>
+					<base_index>88632</base_index>
+					<base_vertex>14990</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="163" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="49" type="1" type_name="Base"/>
+				<num_indices>42</num_indices>
+				<num_vertices>11</num_vertices>
+				<base_index>88716</base_index>
+				<base_vertex>15010</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>42</num_indices>
+					<num_vertices>11</num_vertices>
+					<base_index>88716</base_index>
+					<base_vertex>15010</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="164" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-4.980274 -4.253745 -5.662065 4.981597 4.255986 5.669187</bound_box>
+				<num_materials>1</num_materials>
+				<material id="50" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>8</num_vertices>
+				<base_index>88758</base_index>
+				<base_vertex>15021</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>8</num_vertices>
+					<base_index>88758</base_index>
+					<base_vertex>15021</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_04.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="165" type="1" type_name="Mesh">
+			<name>Asteroid_05</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="166" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="52" type="1" type_name="Base"/>
+				<num_indices>60636</num_indices>
+				<num_vertices>10203</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>60636</num_indices>
+					<num_vertices>10203</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="167" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="53" type="1" type_name="Base"/>
+				<num_indices>15354</num_indices>
+				<num_vertices>2610</num_vertices>
+				<base_index>60636</base_index>
+				<base_vertex>10203</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>15354</num_indices>
+					<num_vertices>2610</num_vertices>
+					<base_index>60636</base_index>
+					<base_vertex>10203</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="168" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="54" type="1" type_name="Base"/>
+				<num_indices>3912</num_indices>
+				<num_vertices>679</num_vertices>
+				<base_index>75990</base_index>
+				<base_vertex>12813</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>3912</num_indices>
+					<num_vertices>679</num_vertices>
+					<base_index>75990</base_index>
+					<base_vertex>12813</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="169" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="55" type="1" type_name="Base"/>
+				<num_indices>1098</num_indices>
+				<num_vertices>199</num_vertices>
+				<base_index>79902</base_index>
+				<base_vertex>13492</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1098</num_indices>
+					<num_vertices>199</num_vertices>
+					<base_index>79902</base_index>
+					<base_vertex>13492</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="170" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="56" type="1" type_name="Base"/>
+				<num_indices>306</num_indices>
+				<num_vertices>60</num_vertices>
+				<base_index>81000</base_index>
+				<base_vertex>13691</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>306</num_indices>
+					<num_vertices>60</num_vertices>
+					<base_index>81000</base_index>
+					<base_vertex>13691</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="171" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="57" type="1" type_name="Base"/>
+				<num_indices>84</num_indices>
+				<num_vertices>20</num_vertices>
+				<base_index>81306</base_index>
+				<base_vertex>13751</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>84</num_indices>
+					<num_vertices>20</num_vertices>
+					<base_index>81306</base_index>
+					<base_vertex>13751</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="172" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="58" type="1" type_name="Base"/>
+				<num_indices>42</num_indices>
+				<num_vertices>12</num_vertices>
+				<base_index>81390</base_index>
+				<base_vertex>13771</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>42</num_indices>
+					<num_vertices>12</num_vertices>
+					<base_index>81390</base_index>
+					<base_vertex>13771</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="173" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-4.141939 -4.838044 -5.400759 4.144143 4.834676 5.395381</bound_box>
+				<num_materials>1</num_materials>
+				<material id="59" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>9</num_vertices>
+				<base_index>81432</base_index>
+				<base_vertex>13783</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>9</num_vertices>
+					<base_index>81432</base_index>
+					<base_vertex>13783</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_05.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="174" type="1" type_name="Mesh">
+			<name>Asteroid_06</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.202769</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="175" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="61" type="1" type_name="Base"/>
+				<num_indices>109242</num_indices>
+				<num_vertices>18338</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>109242</num_indices>
+					<num_vertices>18338</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="176" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="62" type="1" type_name="Base"/>
+				<num_indices>27900</num_indices>
+				<num_vertices>4718</num_vertices>
+				<base_index>109242</base_index>
+				<base_vertex>18338</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>27900</num_indices>
+					<num_vertices>4718</num_vertices>
+					<base_index>109242</base_index>
+					<base_vertex>18338</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="177" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="63" type="1" type_name="Base"/>
+				<num_indices>7110</num_indices>
+				<num_vertices>1220</num_vertices>
+				<base_index>137142</base_index>
+				<base_vertex>23056</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>7110</num_indices>
+					<num_vertices>1220</num_vertices>
+					<base_index>137142</base_index>
+					<base_vertex>23056</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="178" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="64" type="1" type_name="Base"/>
+				<num_indices>1992</num_indices>
+				<num_vertices>353</num_vertices>
+				<base_index>144252</base_index>
+				<base_vertex>24276</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1992</num_indices>
+					<num_vertices>353</num_vertices>
+					<base_index>144252</base_index>
+					<base_vertex>24276</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="179" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="65" type="1" type_name="Base"/>
+				<num_indices>624</num_indices>
+				<num_vertices>117</num_vertices>
+				<base_index>146244</base_index>
+				<base_vertex>24629</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>624</num_indices>
+					<num_vertices>117</num_vertices>
+					<base_index>146244</base_index>
+					<base_vertex>24629</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="180" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="66" type="1" type_name="Base"/>
+				<num_indices>84</num_indices>
+				<num_vertices>18</num_vertices>
+				<base_index>146868</base_index>
+				<base_vertex>24746</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>84</num_indices>
+					<num_vertices>18</num_vertices>
+					<base_index>146868</base_index>
+					<base_vertex>24746</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="181" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="67" type="1" type_name="Base"/>
+				<num_indices>42</num_indices>
+				<num_vertices>10</num_vertices>
+				<base_index>146952</base_index>
+				<base_vertex>24764</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>42</num_indices>
+					<num_vertices>10</num_vertices>
+					<base_index>146952</base_index>
+					<base_vertex>24764</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="182" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-6.928276 -7.1082 -6.599175 7.487093 6.895093 7.20277</bound_box>
+				<num_materials>1</num_materials>
+				<material id="68" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>9</num_vertices>
+				<base_index>146994</base_index>
+				<base_vertex>24774</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>9</num_vertices>
+					<base_index>146994</base_index>
+					<base_vertex>24774</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_06.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="183" type="1" type_name="Mesh">
+			<name>Asteroid_07</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-6.570949 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="184" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="70" type="1" type_name="Base"/>
+				<num_indices>75480</num_indices>
+				<num_vertices>12695</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>75480</num_indices>
+					<num_vertices>12695</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="185" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="71" type="1" type_name="Base"/>
+				<num_indices>19416</num_indices>
+				<num_vertices>3289</num_vertices>
+				<base_index>75480</base_index>
+				<base_vertex>12695</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>19416</num_indices>
+					<num_vertices>3289</num_vertices>
+					<base_index>75480</base_index>
+					<base_vertex>12695</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="186" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="72" type="1" type_name="Base"/>
+				<num_indices>5064</num_indices>
+				<num_vertices>871</num_vertices>
+				<base_index>94896</base_index>
+				<base_vertex>15984</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>5064</num_indices>
+					<num_vertices>871</num_vertices>
+					<base_index>94896</base_index>
+					<base_vertex>15984</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="187" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="73" type="1" type_name="Base"/>
+				<num_indices>1374</num_indices>
+				<num_vertices>247</num_vertices>
+				<base_index>99960</base_index>
+				<base_vertex>16855</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1374</num_indices>
+					<num_vertices>247</num_vertices>
+					<base_index>99960</base_index>
+					<base_vertex>16855</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="188" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="74" type="1" type_name="Base"/>
+				<num_indices>348</num_indices>
+				<num_vertices>68</num_vertices>
+				<base_index>101334</base_index>
+				<base_vertex>17102</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>348</num_indices>
+					<num_vertices>68</num_vertices>
+					<base_index>101334</base_index>
+					<base_vertex>17102</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="189" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="75" type="1" type_name="Base"/>
+				<num_indices>78</num_indices>
+				<num_vertices>18</num_vertices>
+				<base_index>101682</base_index>
+				<base_vertex>17170</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>78</num_indices>
+					<num_vertices>18</num_vertices>
+					<base_index>101682</base_index>
+					<base_vertex>17170</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="190" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="76" type="1" type_name="Base"/>
+				<num_indices>42</num_indices>
+				<num_vertices>14</num_vertices>
+				<base_index>101760</base_index>
+				<base_vertex>17188</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>42</num_indices>
+					<num_vertices>14</num_vertices>
+					<base_index>101760</base_index>
+					<base_vertex>17188</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="191" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-6.570948 -5.557884 -5.253963 6.677028 5.555352 5.255275</bound_box>
+				<num_materials>1</num_materials>
+				<material id="77" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>7</num_vertices>
+				<base_index>101802</base_index>
+				<base_vertex>17202</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>7</num_vertices>
+					<base_index>101802</base_index>
+					<base_vertex>17202</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_07.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="192" type="1" type_name="Mesh">
+			<name>Asteroid_08</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="193" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="79" type="1" type_name="Base"/>
+				<num_indices>105000</num_indices>
+				<num_vertices>17623</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>105000</num_indices>
+					<num_vertices>17623</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="194" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="80" type="1" type_name="Base"/>
+				<num_indices>26796</num_indices>
+				<num_vertices>4526</num_vertices>
+				<base_index>105000</base_index>
+				<base_vertex>17623</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>26796</num_indices>
+					<num_vertices>4526</num_vertices>
+					<base_index>105000</base_index>
+					<base_vertex>17623</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="195" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="81" type="1" type_name="Base"/>
+				<num_indices>6882</num_indices>
+				<num_vertices>1178</num_vertices>
+				<base_index>131796</base_index>
+				<base_vertex>22149</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>6882</num_indices>
+					<num_vertices>1178</num_vertices>
+					<base_index>131796</base_index>
+					<base_vertex>22149</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="196" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="82" type="1" type_name="Base"/>
+				<num_indices>1854</num_indices>
+				<num_vertices>327</num_vertices>
+				<base_index>138678</base_index>
+				<base_vertex>23327</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1854</num_indices>
+					<num_vertices>327</num_vertices>
+					<base_index>138678</base_index>
+					<base_vertex>23327</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="197" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="83" type="1" type_name="Base"/>
+				<num_indices>504</num_indices>
+				<num_vertices>95</num_vertices>
+				<base_index>140532</base_index>
+				<base_vertex>23654</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>504</num_indices>
+					<num_vertices>95</num_vertices>
+					<base_index>140532</base_index>
+					<base_vertex>23654</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="198" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="84" type="1" type_name="Base"/>
+				<num_indices>78</num_indices>
+				<num_vertices>18</num_vertices>
+				<base_index>141036</base_index>
+				<base_vertex>23749</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>78</num_indices>
+					<num_vertices>18</num_vertices>
+					<base_index>141036</base_index>
+					<base_vertex>23749</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="199" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="85" type="1" type_name="Base"/>
+				<num_indices>42</num_indices>
+				<num_vertices>11</num_vertices>
+				<base_index>141114</base_index>
+				<base_vertex>23767</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>42</num_indices>
+					<num_vertices>11</num_vertices>
+					<base_index>141114</base_index>
+					<base_vertex>23767</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="200" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-6.783532 -5.482757 -6.689652 6.734771 5.48521 6.682229</bound_box>
+				<num_materials>1</num_materials>
+				<material id="86" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>8</num_vertices>
+				<base_index>141156</base_index>
+				<base_vertex>23778</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>8</num_vertices>
+					<base_index>141156</base_index>
+					<base_vertex>23778</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_08.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="201" type="1" type_name="Mesh">
+			<name>Asteroid_09</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="202" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="88" type="1" type_name="Base"/>
+				<num_indices>113400</num_indices>
+				<num_vertices>19100</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>113400</num_indices>
+					<num_vertices>19100</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="203" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="89" type="1" type_name="Base"/>
+				<num_indices>28902</num_indices>
+				<num_vertices>4910</num_vertices>
+				<base_index>113400</base_index>
+				<base_vertex>19100</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>28902</num_indices>
+					<num_vertices>4910</num_vertices>
+					<base_index>113400</base_index>
+					<base_vertex>19100</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="204" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="90" type="1" type_name="Base"/>
+				<num_indices>7458</num_indices>
+				<num_vertices>1284</num_vertices>
+				<base_index>142302</base_index>
+				<base_vertex>24010</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>7458</num_indices>
+					<num_vertices>1284</num_vertices>
+					<base_index>142302</base_index>
+					<base_vertex>24010</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="205" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="91" type="1" type_name="Base"/>
+				<num_indices>1992</num_indices>
+				<num_vertices>355</num_vertices>
+				<base_index>149760</base_index>
+				<base_vertex>25294</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>1992</num_indices>
+					<num_vertices>355</num_vertices>
+					<base_index>149760</base_index>
+					<base_vertex>25294</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="206" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="92" type="1" type_name="Base"/>
+				<num_indices>576</num_indices>
+				<num_vertices>110</num_vertices>
+				<base_index>151752</base_index>
+				<base_vertex>25649</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>576</num_indices>
+					<num_vertices>110</num_vertices>
+					<base_index>151752</base_index>
+					<base_vertex>25649</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="207" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="93" type="1" type_name="Base"/>
+				<num_indices>78</num_indices>
+				<num_vertices>19</num_vertices>
+				<base_index>152328</base_index>
+				<base_vertex>25759</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>78</num_indices>
+					<num_vertices>19</num_vertices>
+					<base_index>152328</base_index>
+					<base_vertex>25759</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="208" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="94" type="1" type_name="Base"/>
+				<num_indices>42</num_indices>
+				<num_vertices>12</num_vertices>
+				<base_index>152406</base_index>
+				<base_vertex>25778</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>42</num_indices>
+					<num_vertices>12</num_vertices>
+					<base_index>152406</base_index>
+					<base_vertex>25778</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="209" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-6.773033 -6.770432 -7.024286 6.772956 6.768826 6.853725</bound_box>
+				<num_materials>1</num_materials>
+				<material id="95" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>9</num_vertices>
+				<base_index>152448</base_index>
+				<base_vertex>25790</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>9</num_vertices>
+					<base_index>152448</base_index>
+					<base_vertex>25790</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_09.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="210" type="1" type_name="Mesh">
+			<name>Asteroid_10</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-8.969782 -8.60507 -7.465796 8.199015 8.641329 7.764709</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="211" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="97" type="1" type_name="Base"/>
+				<num_indices>151644</num_indices>
+				<num_vertices>25443</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>151644</num_indices>
+					<num_vertices>25443</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="212" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="98" type="1" type_name="Base"/>
+				<num_indices>38748</num_indices>
+				<num_vertices>6540</num_vertices>
+				<base_index>151644</base_index>
+				<base_vertex>25443</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>38748</num_indices>
+					<num_vertices>6540</num_vertices>
+					<base_index>151644</base_index>
+					<base_vertex>25443</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="213" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="99" type="1" type_name="Base"/>
+				<num_indices>10032</num_indices>
+				<num_vertices>1718</num_vertices>
+				<base_index>190392</base_index>
+				<base_vertex>31983</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>10032</num_indices>
+					<num_vertices>1718</num_vertices>
+					<base_index>190392</base_index>
+					<base_vertex>31983</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="214" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="100" type="1" type_name="Base"/>
+				<num_indices>2664</num_indices>
+				<num_vertices>469</num_vertices>
+				<base_index>200424</base_index>
+				<base_vertex>33701</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>2664</num_indices>
+					<num_vertices>469</num_vertices>
+					<base_index>200424</base_index>
+					<base_vertex>33701</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="215" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="101" type="1" type_name="Base"/>
+				<num_indices>702</num_indices>
+				<num_vertices>130</num_vertices>
+				<base_index>203088</base_index>
+				<base_vertex>34170</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>702</num_indices>
+					<num_vertices>130</num_vertices>
+					<base_index>203088</base_index>
+					<base_vertex>34170</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="216" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="102" type="1" type_name="Base"/>
+				<num_indices>96</num_indices>
+				<num_vertices>22</num_vertices>
+				<base_index>203790</base_index>
+				<base_vertex>34300</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>96</num_indices>
+					<num_vertices>22</num_vertices>
+					<base_index>203790</base_index>
+					<base_vertex>34300</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="217" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="103" type="1" type_name="Base"/>
+				<num_indices>48</num_indices>
+				<num_vertices>13</num_vertices>
+				<base_index>203886</base_index>
+				<base_vertex>34322</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>48</num_indices>
+					<num_vertices>13</num_vertices>
+					<base_index>203886</base_index>
+					<base_vertex>34322</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="218" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-8.969782 -8.60507 -7.465796 8.199016 8.641329 7.764709</bound_box>
+				<num_materials>1</num_materials>
+				<material id="104" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>8</num_vertices>
+				<base_index>203934</base_index>
+				<base_vertex>34335</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>8</num_vertices>
+					<base_index>203934</base_index>
+					<base_vertex>34335</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_10.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="219" type="1" type_name="Mesh">
+			<name>Asteroid_11</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff ffffffff ffffffff ffffffff</masks>
+			<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+			<num_geometries>8 8</num_geometries>
+			<geometry id="220" type="2" type_name="Mesh">
+				<name>l0</name>
+				<max_visibility>60.0</max_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="106" type="1" type_name="Base"/>
+				<num_indices>196206</num_indices>
+				<num_vertices>32881</num_vertices>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>196206</num_indices>
+					<num_vertices>32881</num_vertices>
+				</batch>
+			</geometry>
+			<geometry id="221" type="2" type_name="Mesh">
+				<name>l1</name>
+				<min_visibility>60.0</min_visibility>
+				<max_visibility>160.0</max_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="107" type="1" type_name="Base"/>
+				<num_indices>49080</num_indices>
+				<num_vertices>8271</num_vertices>
+				<base_index>196206</base_index>
+				<base_vertex>32881</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>49080</num_indices>
+					<num_vertices>8271</num_vertices>
+					<base_index>196206</base_index>
+					<base_vertex>32881</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="222" type="2" type_name="Mesh">
+				<name>l2</name>
+				<min_visibility>160.0</min_visibility>
+				<max_visibility>320.0</max_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="108" type="1" type_name="Base"/>
+				<num_indices>11946</num_indices>
+				<num_vertices>2041</num_vertices>
+				<base_index>245286</base_index>
+				<base_vertex>41152</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>11946</num_indices>
+					<num_vertices>2041</num_vertices>
+					<base_index>245286</base_index>
+					<base_vertex>41152</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="223" type="2" type_name="Mesh">
+				<name>l3</name>
+				<min_visibility>320.0</min_visibility>
+				<max_visibility>700.0</max_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="109" type="1" type_name="Base"/>
+				<num_indices>3108</num_indices>
+				<num_vertices>541</num_vertices>
+				<base_index>257232</base_index>
+				<base_vertex>43193</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>3108</num_indices>
+					<num_vertices>541</num_vertices>
+					<base_index>257232</base_index>
+					<base_vertex>43193</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="224" type="2" type_name="Mesh">
+				<name>l4</name>
+				<min_visibility>700.0</min_visibility>
+				<max_visibility>1400.0</max_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="110" type="1" type_name="Base"/>
+				<num_indices>726</num_indices>
+				<num_vertices>133</num_vertices>
+				<base_index>260340</base_index>
+				<base_vertex>43734</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>726</num_indices>
+					<num_vertices>133</num_vertices>
+					<base_index>260340</base_index>
+					<base_vertex>43734</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="225" type="2" type_name="Mesh">
+				<name>l5</name>
+				<min_visibility>1400.0</min_visibility>
+				<max_visibility>2800.0</max_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="111" type="1" type_name="Base"/>
+				<num_indices>102</num_indices>
+				<num_vertices>21</num_vertices>
+				<base_index>261066</base_index>
+				<base_vertex>43867</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>102</num_indices>
+					<num_vertices>21</num_vertices>
+					<base_index>261066</base_index>
+					<base_vertex>43867</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="226" type="2" type_name="Mesh">
+				<name>l6</name>
+				<min_visibility>2800.0</min_visibility>
+				<max_visibility>0.32e4</max_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="112" type="1" type_name="Base"/>
+				<num_indices>42</num_indices>
+				<num_vertices>12</num_vertices>
+				<base_index>261168</base_index>
+				<base_vertex>43888</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>42</num_indices>
+					<num_vertices>12</num_vertices>
+					<base_index>261168</base_index>
+					<base_vertex>43888</base_vertex>
+				</batch>
+			</geometry>
+			<geometry id="227" type="2" type_name="Mesh">
+				<name>l7</name>
+				<min_visibility>0.32e4</min_visibility>
+				<bound_box>-8.481297 -9.634803 -9.70709 8.47574 9.633496 9.706556</bound_box>
+				<num_materials>1</num_materials>
+				<material id="113" type="1" type_name="Base"/>
+				<num_indices>24</num_indices>
+				<num_vertices>10</num_vertices>
+				<base_index>261210</base_index>
+				<base_vertex>43900</base_vertex>
+				<num_batches>1</num_batches>
+				<batch>
+					<num_indices>24</num_indices>
+					<num_vertices>10</num_vertices>
+					<base_index>261210</base_index>
+					<base_vertex>43900</base_vertex>
+				</batch>
+			</geometry>
+			<mesh_name>meshes/asteroid_11.mesh</mesh_name>
+			<mesh_flags>tra,tri,bas,tex</mesh_flags>
+			<vertex_stride>36</vertex_stride>
+		</object>
+		<object id="228" type="1" type_name="Mesh">
+			<name>Earth_Depth</name>
+			<masks>ffffffff ffffffff 2 ffffffff ffffffff 2 ffffffff ffffffff</masks>
+			<bound_box>-1.0 -1.0 -1.0 1.0 1.0 1.0</bound_box>
+			<num_geometries>1 1</num_geometries>
+			<geometry id="229" type="2" type_name="Mesh" expanded="1">
+				<name>Earth</name>
+				<bound_box>-1.0 -1.0 -1.0 1.0 1.0 1.0</bound_box>
+				<num_materials>1</num_materials>
+				<material id="2" type="6" type_name="Shading"/>
+				<num_indices>61440</num_indices>
+				<num_vertices>10242</num_vertices>
+			</geometry>
+			<mesh_name>meshes/earth.mesh</mesh_name>
+			<mesh_flags>ver,tra,tri</mesh_flags>
+			<vertex_stride>12</vertex_stride>
+		</object>
+		<num_cameras>1</num_cameras>
+		<camera id="230" type="1" type_name="Perspective">
+			<name>Camera</name>
+			<masks>ffffffff ffffffff ffffffff ffffffff ffffffff 1 ffffffff ffffffff</masks>
+			<light_visibility>2.0e4</light_visibility>
+			<shadow_visibility>0.8e4</shadow_visibility>
+			<fov_x>55.000004</fov_x>
+			<fov_y>55.0</fov_y>
+			<znear>1.0</znear>
+		</camera>
+		<num_lights>2</num_lights>
+		<light id="231" type="1" type_name="Global">
+			<name>Sun</name>
+			<cast_shadow>1</cast_shadow>
+			<screen_shadow>1</screen_shadow>
+			<tracing_shadow>1</tracing_shadow>
+			<shadow_visibility>0.8e4</shadow_visibility>
+			<intensity>32.0</intensity>
+			<shadow_map_size>1300</shadow_map_size>
+			<shadow_map_samples>16</shadow_map_samples>
+			<shadow_map_radius>0.3</shadow_map_radius>
+			<shadow_map_bias>1.0</shadow_map_bias>
+			<shadow_map_slope>2.0</shadow_map_slope>
+			<shadow_map_clamp>1.0</shadow_map_clamp>
+			<screen_shadow_steps>12</screen_shadow_steps>
+			<tracing_shadow_samples>2</tracing_shadow_samples>
+			<tracing_shadow_bias>0.263415</tracing_shadow_bias>
+			<view_angle>0.1</view_angle>
+			<shadow_range>1.6e4</shadow_range>
+			<shadow_map_splits>8</shadow_map_splits>
+			<shadow_map_split_power>3.5</shadow_map_split_power>
+		</light>
+		<light id="232" type="4" type_name="Image">
+			<name>Galaxy_Light</name>
+			<intensity>1.5</intensity>
+			<weight>1.5</weight>
+			<radius>1.0e5</radius>
+			<environment_file>textures/environment.image</environment_file>
+		</light>
+		<num_graphs>2</num_graphs>
+		<graph id="233" type="1" type_name="Base" expanded="1">
+			<name>Gravity</name>
+			<num_nodes>1b b</num_nodes>
+			<node id="234" type="4" type_name="Object">
+				<name>Galaxy</name>
+				<local_transform>0.819152057171 0.55403226614 0.148452505469 -0.573576450348 0.791240096092 0.212012141943 1.591994453898e-17 -0.258819043636 0.965925812721</local_transform>
+				<num_children>2</num_children>
+				<node id="235" type="4" type_name="Object">
+					<name>Stars</name>
+					<object id="118" type="1" type_name="Mesh"/>
+				</node>
+				<node id="236" type="2" type_name="Light">
+					<name>Galaxy_Light</name>
+					<light id="232" type="4" type_name="Image"/>
+				</node>
+				<object id="116" type="1" type_name="Mesh"/>
+			</node>
+			<node id="237" type="2" type_name="Light">
+				<name>Sun</name>
+				<local_transform>1.0 -0.555111512313e-16 -0.555111512313e-16 -0.555111512313e-16 1.216796441383e-8 1.0 0.0 -1.0 1.216796441383e-8</local_transform>
+				<light id="231" type="1" type_name="Global"/>
+			</node>
+			<node id="238" type="1" type_name="Base">
+				<name>Asteroids</name>
+				<enabled>0</enabled>
+				<local_transform>1.0 0.0 0.555111512313e-16 -114.879991285503 2.775557561563e-17 1.0 0.555111512313e-16 1160.96000047773 0.0 -0.555111512313e-16 1.0 -216.789985181763</local_transform>
+				<num_children>12</num_children>
+				<node id="239" type="4" type_name="Object">
+					<name>Asteroid_00</name>
+					<local_transform>13.699987411499 -29.300012588501 0.0</local_transform>
+					<object id="120" type="1" type_name="Mesh"/>
+				</node>
+				<node id="240" type="4" type_name="Object">
+					<name>Asteroid_01</name>
+					<local_transform>0.300000041723 -17.600011825562 0.0</local_transform>
+					<object id="129" type="1" type_name="Mesh"/>
+				</node>
+				<node id="241" type="4" type_name="Object">
+					<name>Asteroid_02</name>
+					<local_transform>23.200006484985 -13.199999809265 0.0</local_transform>
+					<object id="138" type="1" type_name="Mesh"/>
+				</node>
+				<node id="242" type="4" type_name="Object">
+					<name>Asteroid_03</name>
+					<local_transform>10.899988174438 -3.900012016296 0.0</local_transform>
+					<object id="147" type="1" type_name="Mesh"/>
+				</node>
+				<node id="243" type="4" type_name="Object">
+					<name>Asteroid_04</name>
+					<local_transform>32.499977111816 5.700000286102 4.800000190735</local_transform>
+					<object id="156" type="1" type_name="Mesh"/>
+				</node>
+				<node id="244" type="4" type_name="Object">
+					<name>Asteroid_05</name>
+					<local_transform>-0.171382829547 -0.571690559387 -0.802370131016 19.200012207031 0.839375019073 -0.511137604713 0.184899762273 10.300000190735 -0.515827000141 -0.641800820827 0.567462980747 10.400000572205</local_transform>
+					<object id="165" type="1" type_name="Mesh"/>
+				</node>
+				<node id="245" type="4" type_name="Object">
+					<name>Asteroid_06</name>
+					<local_transform>-15.499994277954 -8.099975585938 0.0</local_transform>
+					<object id="174" type="1" type_name="Mesh"/>
+				</node>
+				<node id="246" type="4" type_name="Object">
+					<name>Asteroid_07</name>
+					<local_transform>-3.999997854233 10.400000572205 15.400000572205</local_transform>
+					<object id="183" type="1" type_name="Mesh"/>
+				</node>
+				<node id="247" type="4" type_name="Object">
+					<name>Asteroid_08</name>
+					<local_transform>0.540467739105 0.35795289278 -0.76142257452 5.999987602234 -0.525581598282 0.850324690342 0.026681985706 19.799987792969 0.657007277012 0.385768949986 0.647706508636 4.5</local_transform>
+					<object id="192" type="1" type_name="Mesh"/>
+				</node>
+				<node id="248" type="4" type_name="Object">
+					<name>Asteroid_09</name>
+					<local_transform>0.993974208832 0.104974411428 -0.031554155052 -34.399997711182 -0.105269283056 0.994412958622 -0.007829074748 -0.499987781048 0.03055600822 0.011103581637 0.999471366405 0.0</local_transform>
+					<object id="201" type="1" type_name="Mesh"/>
+				</node>
+				<node id="249" type="4" type_name="Object">
+					<name>Asteroid_10</name>
+					<local_transform>-22.200002670288 16.800012588501 0.0</local_transform>
+					<object id="210" type="1" type_name="Mesh"/>
+				</node>
+				<node id="250" type="4" type_name="Object">
+					<name>Asteroid_11</name>
+					<local_transform>0.630761563778 -0.590437948704 0.503510653973 -7.899993896484 -0.69578820467 -0.717614889145 0.030127309263 52.600036621094 0.343538433313 -0.36933991313 -0.863463580608 9.800000190735</local_transform>
+					<object id="219" type="1" type_name="Mesh"/>
+				</node>
+			</node>
+			<node id="251" type="3" type_name="Camera">
+				<name>Camera_0</name>
+				<local_transform>-0.931306242943 -0.046278502792 0.361285120249 -460.0 0.357495009899 0.073824040592 0.930992662907 2434.0 -0.069756470621 0.99619692564 -0.052208457142 -71.0</local_transform>
+				<camera id="230" type="1" type_name="Perspective"/>
+			</node>
+			<node id="252" type="3" type_name="Camera">
+				<name>Camera_1</name>
+				<local_transform>-0.300552636385 -0.129582449794 0.944921433926 -351.0 0.782966434956 0.532224237919 0.322026282549 319.0 -0.544639050961 0.836627602577 -0.058502692729 142.0</local_transform>
+				<camera id="230" type="1" type_name="Perspective"/>
+			</node>
+			<node id="253" type="3" type_name="Camera">
+				<name>Camera_2</name>
+				<local_transform>-0.975764870644 -0.216367349029 0.03268115595 409.0 -0.068232104182 0.158942326903 -0.984927237034 -4128.0 0.207911685109 -0.963287353516 -0.169853538275 -547.0</local_transform>
+				<camera id="230" type="1" type_name="Perspective"/>
+			</node>
+			<node id="254" type="3" type_name="Camera">
+				<name>Camera_3</name>
+				<local_transform>-0.67940312624 -0.02108252421 0.733462274075 4023.0 0.728570699692 0.099347345531 0.67772769928 724.0 -0.087155744433 0.99482947588 -0.052136790007 -76.0</local_transform>
+				<camera id="230" type="1" type_name="Perspective"/>
+			</node>
+			<node id="255" type="3" type_name="Camera">
+				<name>Camera_4</name>
+				<local_transform>0.173410207033 -0.095599420369 0.980198800564 -43.0 0.983458101749 0.069699257612 -0.167189016938 193.437194824219 -0.052335955203 0.992976725101 0.106104589999 453.061187744141</local_transform>
+				<camera id="230" type="1" type_name="Perspective"/>
+			</node>
+			<node id="256" type="3" type_name="Camera">
+				<name>Camera_5</name>
+				<local_transform>-0.725902318954 -0.183178022504 0.662956774235 -222.0 0.676914870739 -0.019478941336 0.735803544521 557.0 -0.121869340539 0.982886731625 0.13813573122 289.0</local_transform>
+				<camera id="230" type="1" type_name="Perspective"/>
+			</node>
+			<node id="257" type="3" type_name="Camera">
+				<name>Camera_6</name>
+				<local_transform>0.997260928154 0.026458799839 0.069069050252 730.0 0.052264232188 0.408681482077 -0.911179423332 -1706.0 -0.052335955203 0.912293493748 0.406179219484 620.0</local_transform>
+				<camera id="230" type="1" type_name="Perspective"/>
+			</node>
+			<node id="258" type="1" type_name="Base">
+				<name>Earth</name>
+				<local_transform>-286.788211253708 -399.078620115833 92.134558404224 409.576026991203 -279.437848092306 64.513310003774 0.693889390391e-14 112.475526315659 487.185032590304</local_transform>
+				<num_children>2</num_children>
+				<node id="259" type="4" type_name="Object" expanded="1">
+					<name>Earth_Surface</name>
+					<local_transform>1.0 -2.955278244343e-9 0.501614527693e-8 -0.32944555528e-7 1.0 2.757300165968e-8 -1.683410744135e-9 2.951658473194e-9 1.0</local_transform>
+					<object id="114" type="1" type_name="Mesh"/>
+				</node>
+				<node id="260" type="4" type_name="Object" expanded="1">
+					<name>Earth_Depth</name>
+					<local_transform>0.96 -2.597343326169e-16 0.627472434244e-15 1.108310059093e-15 0.96 0.0 -2.997195080827e-16 -0.555111512313e-15 0.96</local_transform>
+					<object id="228" type="1" type_name="Mesh"/>
+				</node>
+			</node>
+		</graph>
+		<graph id="261" type="3" type_name="Script">
+			<name>Asteroids</name>
+			<transform>-0.939692613387 -0.340718673692 0.029809021168 0.342020163653 -0.936116799348 0.081899607041 -0.652042734658e-17 0.087155742074 0.996194698151</transform>
+			<script_name>scripts/asteroids.cpp</script_name>
+			<script_hash>a2e966f256ec99ffd71166cc346ee43f69bab55c</script_hash>
+		</graph>
+	</scene>
+</scene>

@@ -1,0 +1,92 @@
+// MIT License
+// 
+// Copyright (C) 2018-2024, Tellusim Technologies Inc. https://tellusim.com/
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+/* uniforms
+ */
+uniform vec3 grid_size = vec3(1.0f);
+layout(min = 0.0, max = 1.0) uniform float grid_scale = 0.5f;
+layout(min = 0.0, max = 1.0) uniform float roughness_0_value = 0.8f;
+layout(min = 0.0, max = 1.0) uniform float roughness_1_value = 0.2f;
+layout(min = 0.0, max = 1.0) uniform float metallic_0_value = 0.0f;
+layout(min = 0.0, max = 1.0) uniform float metallic_1_value = 1.0f;
+layout(color) uniform vec4 diffuse_0_color = vec4(0.8f, 0.8f, 0.8f, 1.0f);
+layout(color) uniform vec4 diffuse_1_color = vec4(0.2f, 0.2f, 0.2f, 1.0f);
+
+/* deferred pass
+ */
+deferred {
+	
+	/* deferred definitions
+	 */
+	#define MATERIAL_NORMAL				1
+	#if FLAG_MOTION_BUFFER
+		#define MATERIAL_MOTION			1
+	#endif
+	#define MATERIAL_DEFERRED_MOTION	1
+	
+	/* interface variables
+	 */
+	interface {
+		vec3 position;
+	}
+	
+	/* varying shader
+	 */
+	varying {
+		OUT.position = in_position.xyz / max(grid_size * grid_scale, 1e-6f) + 0.5f;
+	}
+	
+	/* fragment shader
+	 */
+	fragment {
+		
+		vec3 size = fwidth(IN.position) * (frame.renderer_size.y * frame.composite_size.w) + 1e-6f;
+		
+		vec3 value = (abs(fract((IN.position + size) * 0.5f) - 0.5f) - abs(fract((IN.position - size) * 0.5f) - 0.5f)) / size;
+		
+		float k = 0.5f - value.x * value.y * value.z * 0.5f;
+		
+		vec3 diffuse_color = mix(diffuse_0_color.xyz, diffuse_1_color.xyz, k);
+		float roughness_value = mix(roughness_0_value, roughness_1_value, k);
+		float metallic_value = mix(metallic_0_value, metallic_1_value, k);
+		
+		// motion vector
+		#if FLAG_MOTION_BUFFER
+			vec2 motion = in_position_1.xy / in_position_1.w - in_position_0.xy / in_position_0.w;
+		#endif
+		
+		// deferred out
+		DEFERRED_OUT(vec4(0.0f), vec4(in_normal, 0.0f), diffuse_color, vec4(1.0f, roughness_value, metallic_value, 0.4f), motion)
+	}
+}
+
+/* shadow map pass
+ */
+shadow_map {
+	
+	/* fragment shader
+	 */
+	fragment {
+		
+		// do not remove this comment
+	}
+}
